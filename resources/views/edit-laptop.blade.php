@@ -6,9 +6,8 @@
     <title>Edit Laptop</title>
 </head>
 <body>
-    <form method="POST" action="{{ route('update-laptop') }}">
-        @csrf <!-- wajib ada di bawah tag form -->
-        <input type="hidden" name="id" value="{{ $laptop->id }}">
+    <form method="POST" action="{{ route('update-laptop', $laptop->id) }}">
+        @csrf 
         <div>Edit Brand:</div>
         <input type="text" name="brand" value="{{ $laptop->brand }}">
         <div>Edit Model:</div>

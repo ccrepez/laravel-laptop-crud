@@ -23,8 +23,7 @@ class LaptopUpdateTest extends TestCase
     {
         $laptop = Laptop::create(['brand' => 'Asus', 'model' => 'Zenbook', 'processor' => 'i5', 'ram' => 8]);
 
-        $this->post(route('update-laptop'), [
-            'id' => $laptop->id,
+        $this->post(route('update-laptop', $laptop->id), [
             'brand' => 'Lenovo',
             'model' => 'ThinkPad',
             'processor' => 'i7',

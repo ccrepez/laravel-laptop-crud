@@ -51,20 +51,16 @@ class LaptopController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit($id)
+    public function edit(Laptop $laptop)
     {
-        $laptop = Laptop::findOrFail($id);
-
         return view('edit-laptop', compact('laptop'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, Laptop $laptop)
     {
-        $laptop = Laptop::findOrFail($request->id);
-
         $laptop->update([
             'brand' => $request->brand,
             'model' => $request->model,
